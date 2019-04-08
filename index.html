@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Bootsrtap For Beginners</title>
+	<meta name="description" content="Hello World">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+    <div class="ill">
+        <div class="container">
+            <h1 class="first">Jagdish Provision Store</h1>
+            <br>
+            <hr>
+            <!-- all rows -->
+            <div class="row">
+                <div class="col-xs-6 col-md-3" id="user_detail">
+                    <div class="well" style="cursor: pointer;" >Add new user</div> 
+                </div>
+
+                <div class="col-xs-6 col-md-3" id="tax_invoice">
+                   <div class="well" style="cursor: pointer;" >Tax Invoice </a></div>
+                </div>
+
+                <div class="col-xs-6 col-md-3" id="user_dashboard">
+                    <div class="well" style="cursor: pointer;"> Dashboard</div>
+                </div>
+
+                <div class="col-xs-6 col-md-3" id="user_history">
+                    <div class="well" style="cursor: pointer;">User History</div>
+                </div>
+
+                <div class="col-xs-6 col-md-3" id="credit_debit">
+                    <div class="well" style="cursor: pointer;">Credit & debit </div>
+                </div>
+
+    </div>
+            <!-- add new user form -->
+        <form>
+          <div class="user_data" id="user_content">
+                <div class="container">
+                 <h2>Enter customers details</h2>
+                <form>
+                    <div>
+                    <div class="form-group">
+                        Name:
+                      <input type="name" class="form-control" id="name" placeholder="Enter name of customer" name="name">
+                    </div>
+                    <div class="form-group">
+                      Mobile Number:
+                      <input type="digit" class="form-control" id="m_number" placeholder="Enter your Mobile number" name="Mobilenumber">
+                    </div>
+                    <div class="form-group">
+                      Address:
+                        <input type="name" class="form-control" id="address" placeholder="Enter address of customer" name="name">
+                   </div>
+                   <input type="button" class="btn btn-default  col-xs-12 col-md-6" style="width: 25%" id="addval" value="Add">
+                   <button type="reset" class="btn btn-default  col-xs-12 col-md-6" style="width: 25%">Reset</button>
+                </div>
+                </form>
+              </div>
+         </div>
+
+      </form> 
+           <!-- Billing system process -->
+    <div class="t_d" id="user_content1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div>
+                        <h2 class="text-center" style="cursor: pointer;">Invoice</h2>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                    <hr>
+                    <div class="row">
+                        
+                        <div class="col-xs-6 col-md-12 text-right">
+                            <address>
+                                <strong>Customer Name:</strong><br>
+                                <input type="text" name="name" style="width: 25%" id="customer_name"><br>
+                                <br>
+    
+                                <strong>Mobile Number:</strong><br>
+                                <input type="digit" name="mobilenumber" style="width: 25%" id="customer_number"><br>
+                                <br>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: -50px;">
+                        <div class="col-xs-6 col-md-12 text-right">
+                            <address>
+                                <strong>Order Time:</strong><span id="time"></span>
+                                <br><br>
+                                <strong>Order Date:</strong><span id="date"></span>
+                                <br>
+                            
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <form id="myform">
+                        <table class="table table-bordered" id="mytable">
+                            <thead>
+                                <tr class="item-row">
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="hiderow">
+                                <td colspan="4">
+                                    <a id="addRow" href="javascript:;" title="Add a row" class="btn btn-primary">Add a row</a>
+                                </td>
+                            </tr>
+                            <!-- Here should be the item row -->
+                          <!--  <tr class="item-row">
+                                <td><input class="form-control item" placeholder="Item" type="text"></td>
+                                <td><input class="form-control price" placeholder="Price" type="text"></td>
+                                <td><input class="form-control qty" placeholder="Quantity" type="text"></td>
+                                <td><span class="total">0.00</span></td>
+                            </tr> -->
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="text-right"><strong>Sub Total</strong></td>
+                                <td><span id="subtotal"></span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Quantity: </strong><span id="totalQty" style="color: red; font-weight: bold"></span> Units</td>
+                                <td></td>
+                                <td class="text-right"><strong>Discount</strong></td>
+                                <td><input class="form-control" id="discount" value="" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="text-right"><strong>Shipping</strong></td>
+                                <td><input class="form-control" id="shipping" value="" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td class="text-right"><strong>Grand Total</strong></td>
+                                <td><span id="grandTotal"></span></td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                        
+                                    <button type="reset" class="btn btn-success" style="width: 40%" id="addAct">Add to Account</button>
+                                   <button type="reset" class="btn btn-default" onclick="resetform()">Reset</button>
+                            </form>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+           <!-- user dashboard -->
+    <div class="u_d" id="user_content2">
+        <hr>
+        <h1>
+            All customer details
+        </h1>
+        <hr>
+        <div class="container">
+            <table class="table table-striped" id= tablee>
+                <thead>
+                  <tr>
+                    <th  class="sNo">Sr.no</th>
+                    <th>Customer Name</th>
+                    <th>Customer Mobilenumber</th>
+                    <th>Customer Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+               <!-- User History -->
+        <div class="u_h" id="user_historyy">
+            <hr>
+            <h1>
+                All customers History
+            </h1>      
+         <hr>
+         <form>
+            <input type="text" name="search" onkeyup="myFun()" id="search_val"  placeholder="Search..">
+          </form>
+                <div class="container">
+                        <table class="table table-striped" id= tablee2>
+                            <thead>
+                              <tr>
+                                <th id="cust_name">Customer Name</th>
+                                <th id="cust_number">Customer Mobilenumber</th>
+                                <th>Date</th>
+                                <th id="custTot">Total</th>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                             
+                            </tbody>
+                          </table>
+                    </div>
+            </div>
+            <!-- Credit & Debit-->
+            <div class="c_d" id="credit_debitt">
+                <hr>
+                <h1>
+                    All credit & debit Details
+                </h1>
+                <div class="tab tab-2">
+                        Company Name:<input type="text" name="cname" id="cname">
+                        Product Name:<input type="text" name="pname" id="pname">
+                        Product Price:<input type="text" name="pprice" id="pprice"><br><br>
+                        debit Bill No. : <input type="text" name="dbillno" id="dno">
+                        debit Amount: <input type="text" name="damount" id="damount">
+                        debit Date: <input type="text" name="ddate" id="ddate"><br><br>
+                        Credit Bill No. : <input type="text" name="cbillno" id="cno">
+                        Credit Amount: <input type="text" name="camount" id="camount">
+                        Credit Date: <input type="text" name="cdate" id="cdate"><br><br>
+                    
+                    <button onclick="addHtmlTableRow();">Add</button>
+                    <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                    <button onclick="removeSelectedRow();">Remove</button>
+    
+                    
+                </div>
+                <div class="container">
+                        <div class="tab tab-1">
+                            <table id="table" border="1">
+                                <tr>
+                                        <th>Company Name</th>
+                                        <th>Product Name</th>
+                                        <th> Product Price</th>
+                                        <th>debit Bill No</th>
+                                        <th>debit Amount</th>
+                                        <th>debit Date</th>
+                                        <th>Credit Bill No.</th>
+                                        <th>Credit Amount</th>
+                                        <th>Credit Date</th>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                
+        </div>
+            </div>
+
+            <!-- End Part-->
+        </div>
+
+    </div>
+    
+	<!-- Latest compiled and minified JavaScript -->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="jquery.invoice.js"></script>
+</body>	
+</html> 

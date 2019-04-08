@@ -1,0 +1,40 @@
+.ill{
+        margin-top: 20px;
+    }
+    #user_content{
+        display: none;
+    }
+    #user_content1{
+        display: none;
+    }
+    #user_content2{
+        display: none;
+    }
+    #user_historyy{
+        display: none;
+    }
+    #credit_debitt{
+        display: none;
+    }
+    .phone-input{
+        margin-bottom:8px;
+    }
+   /* input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+      }
+      
+      input[type=text]:focus {
+        width: 100%;
+      }*/
+
